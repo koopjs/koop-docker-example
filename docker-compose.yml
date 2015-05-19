@@ -1,0 +1,11 @@
+postgis:
+  image: postgis
+  ports:
+    - "5432:5432"
+
+koop:
+  image: koop
+  links:
+    - postgis
+  ports:
+    - "8000:1337"
