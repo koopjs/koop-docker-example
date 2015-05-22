@@ -3,9 +3,37 @@ postgis:
   ports:
     - "5432:5432"
 
+es:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+
 koop:
-  image: koop
+  image: kpettijohn/koop
   links:
     - postgis
+    - es
   ports:
-    - "8000:1337"
+    - "8000:8000"
+
+koopES:
+  image: kpettijohn/koop
+  links:
+    - postgis
+    - es
+  environment:
+    - KOOP_CACHE=es
+  ports:
+    - "8001:8000"
+
+koopPG:
+  image: kpettijohn/koop
+  command: koop postgis
+  links:
+    - postgis
+    - es
+  environment:
+    - KOOP_CACHE=postgis
+  ports:
+    - "8002:8000"
