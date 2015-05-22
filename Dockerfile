@@ -1,16 +1,21 @@
 FROM node:0.10
 
-RUN apt-get update && apt-get install -y postgresql-client-9.4
+ENV APP_DIR /usr/src/koop/
 
-RUN git clone https://github.com/koopjs/koop-sample-app.git /usr/src/koop
+RUN apt-get update \
+  && apt-get install -y postgresql-client-9.4 \
+  && mkdir -p $APP_DIR
 
-WORKDIR /usr/src/koop 
+WORKDIR $APP_DIR
+
+COPY package.json $APP_DIR
 
 RUN npm install
 
-ADD docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY . $APP_DIR
+
+EXPOSE 8000
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-
-EXPOSE 1337
 CMD ["koop"]
