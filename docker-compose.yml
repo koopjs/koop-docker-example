@@ -20,7 +20,6 @@ koop:
 koopES:
   image: kpettijohn/koop
   links:
-    - postgis
     - es
   environment:
     - KOOP_CACHE=es
@@ -32,7 +31,6 @@ koopPG:
   command: koop postgis
   links:
     - postgis
-    - es
   environment:
     - KOOP_CACHE=postgis
   ports:
