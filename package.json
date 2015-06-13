@@ -1,16 +1,13 @@
 {
-  "name": "koop-sample-app-docker",
-  "version": "1.0.0",
+  "name": "koop-docker-example",
   "description": "A sample application using koop with postgis and elasticsearch",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.0",
+  "author": "Kevin Pettijohn",
   "dependencies": {
     "config": "^1.13.0",
-    "js-yaml": "^3.3.1",
     "cors": "^2.5.3",
     "express": "^4.12.3",
+    "js-yaml": "^3.3.1",
     "koop": "https://github.com/Esri/koop/tarball/master",
     "koop-agol": "https://github.com/Esri/koop-agol/tarball/master",
     "koop-escache": "https://github.com/koopjs/koop-escache/tarball/master",
@@ -19,13 +16,16 @@
     "koop-pgcache": "https://github.com/Esri/koop-pgcache/tarball/master"
   },
   "keywords": [
+    "docker",
+    "elasticsearch",
     "koop",
     "postgis",
-    "elasticsearch",
-    "sample",
-    "docker"
+    "sample"
   ],
-  "author": "Kevin Pettijohn",
-  "license": "ISC"
+  "license": "Apache-2.0",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
-
