@@ -1,12 +1,13 @@
-# Koop docker example 
+# Koop Docker example
 
 **Work In Progress**
 
-Sample application using koop with docker.
+Sample application using [Koop](https://github.com/esri/koop) with [Docker](https://www.docker.com/).
 
 ## Getting started
 
 ### OSX
+
 Grab docker, docker-machine, and docker-compose.
 ```
 curl -L https://get.docker.com/builds/Darwin/x86_64/docker-latest > docker
@@ -14,7 +15,7 @@ curl -L https://github.com/docker/machine/releases/download/v0.2.0-rc3/docker-ma
 curl -L https://github.com/docker/compose/releases/download/1.2.0rc3/docker-compose-`uname -s`-`uname -m` > docker-compose
 
 chmod +x docker*
-mv docker* /usr/local/bin/ 
+mv docker* /usr/local/bin/
 ```
 
 Create your docker host with docker-machine.
@@ -69,6 +70,7 @@ Query elasticsearch cache for the newly created feature service.
 ```
 curl -XGET 127.0.0.1:9200/koop/_search?=_id=Gist_6021269_0
 ```
+
 ### PostGIS
 
 Start up the PostGIS cache backend.
@@ -88,7 +90,7 @@ curl -XGET 127.0.0.1:8002/gist/6021269
 ```
 
 ```
-docker exec koopdockerexample_koopPG_1 psql -U postgres -d koopdev -x -c "SELECT * FROM \"Gist:6021269:0\""
+docker exec koopdockerexample_postgis_1 psql -U postgres -d koopdev -x -c "SELECT * FROM \"Gist:6021269:0\""
 
 -[ RECORD 1 ]------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 id      | 1
@@ -97,7 +99,7 @@ geom    |
 geohash | 9xr1kvcw
 ```
 
-## Without `docker-compose` 
+## Without `docker-compose`
 
 Start the cache backends for ES and PostGIS
 ```
