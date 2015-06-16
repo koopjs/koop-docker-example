@@ -11,8 +11,8 @@ Sample application using [Koop](https://github.com/esri/koop) with [Docker](http
 Grab docker, docker-machine, and docker-compose.
 ```
 curl -L https://get.docker.com/builds/Darwin/x86_64/docker-latest > docker
-curl -L https://github.com/docker/machine/releases/download/v0.2.0-rc3/docker-machine_darwin-amd64 > docker-machine
-curl -L https://github.com/docker/compose/releases/download/1.2.0rc3/docker-compose-`uname -s`-`uname -m` > docker-compose
+curl -L https://github.com/docker/machine/releases/download/v0.2.0/docker-machine_darwin-amd64 > docker-machine
+curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > docker-compose
 
 chmod +x docker*
 mv docker* /usr/local/bin/
