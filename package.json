@@ -8,16 +8,17 @@
     "cors": "^2.5.3",
     "express": "^4.12.3",
     "js-yaml": "^3.3.1",
-    "koop": "https://github.com/Esri/koop/tarball/master",
-    "koop-agol": "https://github.com/Esri/koop-agol/tarball/master",
-    "koop-escache": "https://github.com/koopjs/koop-escache/tarball/master",
-    "koop-gist": "https://github.com/koopjs/koop-gist/tarball/master",
-    "koop-github": "https://github.com/koopjs/koop-github/tarball/master",
-    "koop-pgcache": "https://github.com/Esri/koop-pgcache/tarball/master"
+    "koop": "^2.1.12",
+    "koop-agol": "^0.2.12",
+    "koop-escache": "^0.0.7",
+    "koop-gist": "^0.0.2",
+    "koop-github": "^0.1.12",
+    "koop-pgcache": "^1.0.1"
   },
   "keywords": [
     "docker",
     "elasticsearch",
+    "example",
     "koop",
     "postgis",
     "sample"
