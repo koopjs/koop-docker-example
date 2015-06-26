@@ -3,6 +3,7 @@ FROM node:0.10
 ENV APP_DIR /usr/src/koop/
 
 RUN apt-get update \
+	&& apt-get intall apt-get install gdal-bin \
   && apt-get install -y postgresql-client-9.4 \
   && mkdir -p $APP_DIR
 
