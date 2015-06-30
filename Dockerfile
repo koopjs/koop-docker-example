@@ -1,10 +1,11 @@
-FROM node:0.10
+FROM node:0.10-slim
 
 ENV APP_DIR /usr/src/koop/
 
 RUN apt-get update \
-	&& apt-get install -y gdal-bin \
-  && apt-get install -y postgresql-client-9.4 \
+  && apt-get install -y gdal-bin postgresql-client-9.4 \
+    --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/* \
   && mkdir -p $APP_DIR
 
 WORKDIR $APP_DIR
