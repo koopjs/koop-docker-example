@@ -119,8 +119,8 @@ docker run --name es -p "9200:9200" -p "9300:9300" -it elasticsearch
 Run a koop server for each of the backends.
 
 ```
-docker run --name koopES -it -p "8000:8000" --link es:es -e KOOP_CACHE=es kpettijohn/koop
-docker run --name koopPG -it -p "8000:8000" --link postgis:postgis -e KOOP_CACHE=postgis kpettijohn/koop koop postgis
+docker run --name koopES -it -p "8000:8000" --link es:es -e KOOP_CACHE=es koopjs/koop
+docker run --name koopPG -it -p "8000:8000" --link postgis:postgis -e KOOP_CACHE=postgis koopjs/koop koop postgis
 ```
 
 ## Contributing

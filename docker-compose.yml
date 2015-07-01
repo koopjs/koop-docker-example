@@ -10,7 +10,7 @@ es:
     - "9300:9300"
 
 koop:
-  image: kpettijohn/koop
+  image: koopjs/koop
   links:
     - postgis
     - es
@@ -18,7 +18,7 @@ koop:
     - "8000:8000"
 
 koopES:
-  image: kpettijohn/koop
+  image: koopjs/koop
   links:
     - es
   environment:
@@ -27,7 +27,7 @@ koopES:
     - "8001:8000"
 
 koopPG:
-  image: kpettijohn/koop
+  image: koopjs/koop
   command: koop postgis
   links:
     - postgis
