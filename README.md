@@ -1,5 +1,7 @@
 # Koop Docker example
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/koopjs/koop-docker-example.svg)](https://greenkeeper.io/)
+
 > Sample application using [Koop](https://github.com/esri/koop) with [Docker](https://www.docker.com/).
 
 **Work In Progress**
