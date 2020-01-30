@@ -4,24 +4,21 @@
   "version": "1.0.0",
   "author": "Kevin Pettijohn",
   "dependencies": {
-    "config": "^1.13.0",
-    "cors": "^2.5.3",
-    "express": "^4.12.3",
-    "js-yaml": "^3.3.1",
-    "koop": "^2.1.12",
-    "koop-agol": "^0.2.12",
-    "koop-escache": "^0.0.7",
-    "koop-gist": "^0.0.2",
-    "koop-github": "^0.1.12",
-    "koop-pgcache": "^1.0.1"
+    "config": "^3.2.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "js-yaml": "^3.13.1",
+    "koop": "^3.17.0",
+    "koop-agol": "^3.14.4",
+    "koop-escache": "^0.2.0",
+    "koop-gist": "^2.0.0",
+    "koop-github": "^2.0.0",
+    "koop-pgcache": "^1.7.2"
   },
   "keywords": [
     "docker",
-    "elasticsearch",
     "example",
-    "koop",
-    "postgis",
-    "sample"
+    "koop"
   ],
   "license": "Apache-2.0",
   "main": "server.js",
