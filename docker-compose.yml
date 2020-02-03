@@ -1,37 +1,7 @@
-postgis:
-  image: kpettijohn/postgis
-  ports:
-    - "5432:5432"
+version: '3'
 
-es:
-  image: elasticsearch
-  ports:
-    - "9200:9200"
-    - "9300:9300"
-
-koop:
-  image: koopjs/koop
-  links:
-    - postgis
-    - es
-  ports:
-    - "8000:8000"
-
-koopES:
-  image: koopjs/koop
-  links:
-    - es
-  environment:
-    - KOOP_CACHE=es
-  ports:
-    - "8001:8000"
-
-koopPG:
-  image: koopjs/koop
-  command: koop postgis
-  links:
-    - postgis
-  environment:
-    - KOOP_CACHE=postgis
-  ports:
-    - "8002:8000"
+services:
+  koop:
+    build:
+      context: .
+      dockerfile: Dockerfile

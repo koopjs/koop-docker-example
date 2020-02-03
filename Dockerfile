@@ -1,23 +1,20 @@
-FROM node:0.10-slim
+# From https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+FROM node:12
 
-ENV APP_DIR /usr/src/koop/
+# Create app directory
+WORKDIR /usr/src/app
 
-RUN apt-get update \
-  && apt-get install -y gdal-bin postgresql-client-9.4 \
-    --no-install-recommends \
-  && rm -rf /var/lib/apt/lists/* \
-  && mkdir -p $APP_DIR
-
-WORKDIR $APP_DIR
-
-COPY package.json $APP_DIR
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
 RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-COPY . $APP_DIR
+# Bundle app source
+COPY . .
 
-EXPOSE 8000
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["koop"]
+EXPOSE 9000
+CMD [ "node", "src/index.js" ]

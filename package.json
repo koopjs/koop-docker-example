@@ -1,19 +1,12 @@
 {
   "name": "koop-docker-example",
-  "description": "A sample application using koop with postgis and elasticsearch",
+  "description": "An example application using koop with docker",
   "version": "1.0.0",
   "author": "Kevin Pettijohn",
   "dependencies": {
+    "@koopjs/provider-github": "^3.0.0",
     "config": "^3.2.5",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "js-yaml": "^3.13.1",
-    "koop": "^3.17.0",
-    "koop-agol": "^3.14.4",
-    "koop-escache": "^0.2.0",
-    "koop-gist": "^2.0.0",
-    "koop-github": "^2.0.0",
-    "koop-pgcache": "^1.7.2"
+    "koop": "^3.17.0"
   },
   "keywords": [
     "docker",
@@ -21,9 +14,11 @@
     "koop"
   ],
   "license": "Apache-2.0",
-  "main": "server.js",
+  "main": "src/index.js",
   "private": true,
   "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "koop serve --watch --debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
