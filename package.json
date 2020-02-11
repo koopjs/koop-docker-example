@@ -20,5 +20,8 @@
     "start": "node src/index.js",
     "start:dev": "koop serve --watch --debug",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@koopjs/cli": "^0.6.0"
   }
 }
